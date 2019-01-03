@@ -12,7 +12,8 @@
     "dev": "tsc --watch",
     "start": "node dist/api.js",
     "lint": "tsc --noEmit",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist",
+    "test": "vitest run"
   },
   "keywords": ["cron", "scheduler", "job", "task", "typescript", "monitoring"],
   "author": "",
@@ -22,6 +23,7 @@
   },
   "devDependencies": {
     "typescript": "^5.5.4",
-    "@types/node": "^22.5.0"
+    "@types/node": "^22.5.0",
+    "vitest": "^2.0.0"
   }
 }

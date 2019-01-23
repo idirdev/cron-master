@@ -181,3 +181,25 @@ curl http://localhost:4040/health
 ## License
 
 MIT
+
+---
+
+## 🇫🇷 Documentation en français
+
+### Description
+**cron-master** est un planificateur et gestionnaire de tâches cron en TypeScript, avec analyse d'expressions cron, logique de réessai, historique d'exécution, surveillance et une API REST intégrée. Il est conçu avec un minimum de dépendances (uniquement TypeScript et Commander).
+
+### Installation
+```bash
+npm install cron-master
+```
+
+### Utilisation
+```typescript
+import { Scheduler } from "cron-master";
+const scheduler = new Scheduler();
+scheduler.addJob("nettoyage", "0 */6 * * *", async () => {
+  console.log("Nettoyage en cours...");
+});
+scheduler.start();
+```

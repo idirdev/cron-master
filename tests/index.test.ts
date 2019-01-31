@@ -149,14 +149,14 @@ describe('CronParser - getNextRun', () => {
 
   it('returns the correct next minute for every-minute cron', () => {
     const parsed = parser.parse('* * * * *');
-    const from = new Date('2024-01-15T10:30:00.000Z');
+    const from = new Date(2024, 0, 15, 10, 30, 0); // local time to avoid TZ issues
     const nextRun = parser.getNextRun(parsed, from);
     expect(nextRun.getMinutes()).toBe(31);
   });
 
   it('returns the correct next hour for hourly cron', () => {
     const parsed = parser.parse('0 * * * *');
-    const from = new Date('2024-01-15T10:30:00.000Z');
+    const from = new Date(2024, 0, 15, 10, 30, 0); // local time to avoid TZ issues
     const nextRun = parser.getNextRun(parsed, from);
     expect(nextRun.getMinutes()).toBe(0);
     expect(nextRun.getHours()).toBe(11);
